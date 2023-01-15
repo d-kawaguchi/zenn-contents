@@ -6,6 +6,13 @@
   "author": "d-kawaguchi <45481012+d-kawaguchi@users.noreply.github.com>",
   "license": "MIT",
   "dependencies": {
+    "@textlint/textlint-plugin-markdown": "^12.5.0",
+    "textlint": "^12.5.1",
+    "textlint-rule-preset-ja-technical-writing": "^7.0.0",
     "zenn-cli": "^0.1.134"
+  },
+  "scripts": {
+    "textlint": "textlint",
+    "textlint:fix": "textlint --fix"
   }
 }
