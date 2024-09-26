@@ -3,7 +3,8 @@ title: "CSS Anchor Positioning 仕様の紹介"
 emoji: "⚓"
 type: "tech" # tech: 技術記事 / idea: アイデア
 topics: [css, html]
-published: false
+published: true
+published_at: 2024-09-26 16:30
 ---
 
 CSS Anchor Positioning は、要素の配置を制御する新しい仕様で、指定した要素（アンカー要素）の位置を基準に、要素を配置できます。
