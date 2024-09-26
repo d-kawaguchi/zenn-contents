@@ -22,7 +22,7 @@ CSS Anchor Positioning の基本的な使い方は、1枚のシートにまと�
 
 ### anchor-name ... アンカー要素の宣言
 
-![](/images/css-anchor-positioning/image1-1.png =400x)
+![](/images/css-anchor-positioning-294aa71a7f77fc/image1-1.png =400x)
 
 この要素が、指定したアンカー名のアンカー要素になることを宣言します。これにより、この要素はアンカー名を通じて他の要素から参照されるようになります。
 アンカー名は、`--`から始まる必要があります。
@@ -43,7 +43,7 @@ CSS Anchor Positioning の基本的な使い方は、1枚のシートにまと�
 
 ### position-anchor ... アンカー先の指定
 
-![](/images/css-anchor-positioning/image1-2.png =400x)
+![](/images/css-anchor-positioning-294aa71a7f77fc/image1-2.png =400x)
 
 この要素がアンカー先とするアンカー要素を、アンカー名により指定します。これにより、この要素は指定したアンカー要素を基準に配置されることとなります。
 
@@ -124,7 +124,7 @@ HTML の `anchor` 属性を使用することでも、アンカー先を指定�
 
 ### anchor() 関数 ... アンカー要素の位置を参照
 
-![](/images/css-anchor-positioning/image2-1.png =480x)
+![](/images/css-anchor-positioning-294aa71a7f77fc/image2-1.png =480x)
 
 `anchor()` 関数は、アンカー要素の指定した箇所の位置を参照する関数です。
 `top`、`right`、`bottom`、`left` といったプロパティの値として使用でき、「配置したい要素のどの部分が、アンカー要素のどこと対応するか。」という指定ができます。
@@ -205,7 +205,7 @@ Popover API で展開される要素は、ユーザーエージェントスタ�
 
 ### anchor-center 値 ... アンカー要素を基準とした中央寄せ
 
-![](/images/css-anchor-positioning/image2-3.png =480x)
+![](/images/css-anchor-positioning-294aa71a7f77fc/image2-3.png =480x)
 
 `anchor-center` 値は、`justify-self`, `align-self`, `justify-items`, `align-items` プロパティに指定できる値で、要素をアンカー要素の中央を基準に配置します。
 これにより、アンカー要素を基準とした中央寄せが簡単に行えます。
@@ -223,7 +223,7 @@ Popover API で展開される要素は、ユーザーエージェントスタ�
 
 ### position-area ... 配置される領域の指定
 
-![](/images/css-anchor-positioning/image2-4.png =480x)
+![](/images/css-anchor-positioning-294aa71a7f77fc/image2-4.png =480x)
 
 `position-area` プロパティは、要素をアンカー要素の周囲のどの領域に配置するか指定するプロパティです。
 アンカー要素の周囲を「右上」「真上」「左上」...の8つの領域に区切り、要素が占める領域を指定します。1つもしくは隣り合う複数の領域を指定できます。
@@ -263,7 +263,7 @@ top, right 等のプロパティを記述するよりもシンプルに、アン
 
 ### position-try-fallbacks プロパティ ... 表示領域に収まらない時の挙動の指定
 
-![](/images/css-anchor-positioning/image3-1.png =480x)
+![](/images/css-anchor-positioning-294aa71a7f77fc/image3-1.png =480x)
 
 `position-try-fallbacks` プロパティは、要素が包含ブロックに収まらない場合、どのように表示位置をフォールバックするか指定します。
 初期表示時だけでなく、スクロールやリサイズ等で収まらなくなった場合も、表示位置がフォールバックされます。
@@ -311,7 +311,7 @@ top, right 等のプロパティを記述するよりもシンプルに、アン
 
 ### position-try-order
 
-![](/images/css-anchor-positioning/image3-4.png =480x)
+![](/images/css-anchor-positioning-294aa71a7f77fc/image3-4.png =480x)
 
 `position-try-order` プロパティは、`position-try-fallbacks` プロパティで指定したフォールバックの試行順序を指定します。
 この要素の包含ブロックのサイズを、 `position-try-fallbacks` プロパティで指定したそれぞれの値について計算し、その大きさによって適用される順序を制御します。
@@ -407,7 +407,7 @@ C. `flip-block` した結果（`bottom span-right`）
 
 ### anchor-size() 関数 ... アンカー要素のサイズを取得
 
-![](/images/css-anchor-positioning/image4-1.png =540x)
+![](/images/css-anchor-positioning-294aa71a7f77fc/image4-1.png =540x)
 
 `anchor-size()` 関数は、アンカー要素のサイズを取得する関数です。要素のサイズをアンカー要素のサイズに関連付けて指定する際などに使用します。
 `anchor-size()` 関数は *`<length>`* を返すため、`calc()` 関数や`clamp()` 関数と組み合わせて使用できます。
@@ -486,4 +486,4 @@ HTML（必要に応じて WAI-ARIA）で適切にマークアップし、これ�
 - [CSS Anchor Positioning Editor’s Draft](https://drafts.csswg.org/css-anchor-position-1/)
 - [CSS Anchor Positioning Editor’s Draft（日本語訳）](https://triple-underscore.github.io/css-anchor-position-ja.html)
 - [Chrome for Developers | Blog | CSS アンカー ポジショニング API のご紹介](https://developer.chrome.com/blog/anchor-positioning-api?hl=ja)
-- [ポップアップが画面内に収まらない場合に自動的に表示位置を調整する CSS Anchor Positioning](https://azukiazusa.dev/blog/css-anchor-positioning/)
+- [ポップアップが画面内に収まらない場合に自動的に表示位置を調整する CSS Anchor Positioning](https://azukiazusa.dev/blog/css-anchor-positioning-294aa71a7f77fc/)
