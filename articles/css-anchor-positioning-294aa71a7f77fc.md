@@ -14,7 +14,7 @@ CSS Anchor Positioning は、要素の配置を制御する新しい仕様で、
 
 CSS Anchor Positioning の基本的な使い方は、1枚のシートにまとめました。よろしければ参考にしてください。
 
-![anchor-name プロパティ、position-anchor プロパティ、position-area プロパティ、position-try プロパティについてのそれぞれの説明。記事内でプロパティごと同等の内容が存在するので、そちらを参照ください。](/images/css-anchor-positioning/image0-1.png)
+![anchor-name プロパティ、position-anchor プロパティ、position-area プロパティ、position-try プロパティについてのそれぞれの説明。記事内でプロパティごと同等の内容が存在するので、そちらを参照ください。](/images/css-anchor-positioning-294aa71a7f77fc/image0-1.png)
 
 以下、この記事では CSS Anchor Positioning の仕様内の各プロパティや値などを、より詳しく紹介します。
 
@@ -22,7 +22,7 @@ CSS Anchor Positioning の基本的な使い方は、1枚のシートにまと�
 
 ### anchor-name ... アンカー要素の宣言
 
-![](/images/css-anchor-positioning/image1-1.png =400x)
+![](/images/css-anchor-positioning-294aa71a7f77fc/image1-1.png =400x)
 
 この要素が、指定したアンカー名のアンカー要素になることを宣言します。これにより、この要素はアンカー名を通じて他の要素から参照されるようになります。
 アンカー名は、`--`から始まる必要があります。
@@ -43,7 +43,7 @@ CSS Anchor Positioning の基本的な使い方は、1枚のシートにまと�
 
 ### position-anchor ... アンカー先の指定
 
-![](/images/css-anchor-positioning/image1-2.png =400x)
+![](/images/css-anchor-positioning-294aa71a7f77fc/image1-2.png =400x)
 
 この要素がアンカー先とするアンカー要素を、アンカー名により指定します。これにより、この要素は指定したアンカー要素を基準に配置されることとなります。
 
@@ -89,7 +89,7 @@ HTML の `anchor` 属性を使用することでも、アンカー先を指定�
 2024年9月現在、anchor-scope プロパティが動作するブラウザはありません。
 :::
 
-![DOMの木構造を用いて、値が "none" のときはアンカー要素がどこからでも参照できること、"アンカー名" もしくは "all" のときはアンカー要素のサブツリーからしか参照できないことを示した図。](/images/css-anchor-positioning/image1-3.png)
+![DOMの木構造を用いて、値が "none" のときはアンカー要素がどこからでも参照できること、"アンカー名" もしくは "all" のときはアンカー要素のサブツリーからしか参照できないことを示した図。](/images/css-anchor-positioning-294aa71a7f77fc/image1-3.png)
 
 アンカー名の参照されるスコープを指定します。このプロパティで指定されたアンカー名は、サブツリー内からのみ参照されます。
 アンカー要素をコンポーネントを再利用する場合などに、アンカー名の衝突を避けられます。
@@ -113,7 +113,7 @@ HTML の `anchor` 属性を使用することでも、アンカー先を指定�
 }
 ```
 
-![複数のアンカー要素とポップオーバーがあり、anchor-scope を指定しない場合と、 anchor-scope でスコープを制限した場合の2通りの表示のされ方のイメージが示されている。前者は最後のアンカー要素にポップオーバーがすべて集まって重なってしまっており、後者はそれぞれのアンカー要素にそれぞれのポップオーバーが配置されている](/images/css-anchor-positioning/image1-4.png)
+![複数のアンカー要素とポップオーバーがあり、anchor-scope を指定しない場合と、 anchor-scope でスコープを制限した場合の2通りの表示のされ方のイメージが示されている。前者は最後のアンカー要素にポップオーバーがすべて集まって重なってしまっており、後者はそれぞれのアンカー要素にそれぞれのポップオーバーが配置されている](/images/css-anchor-positioning-294aa71a7f77fc/image1-4.png)
 
 アンカー要素のコンポーネントを再利用する際など、同じアンカー名の要素が複数存在することがあります。
 アンカー名のスコープを制限しない場合、そのアンカー名を通じて同名のアンカー要素すべてが参照されます。その結果、最後のアンカー要素を基準に配置されることとなります。
@@ -124,14 +124,14 @@ HTML の `anchor` 属性を使用することでも、アンカー先を指定�
 
 ### anchor() 関数 ... アンカー要素の位置を参照
 
-![](/images/css-anchor-positioning/image2-1.png =480x)
+![](/images/css-anchor-positioning-294aa71a7f77fc/image2-1.png =480x)
 
 `anchor()` 関数は、アンカー要素の指定した箇所の位置を参照する関数です。
 `top`、`right`、`bottom`、`left` といったプロパティの値として使用でき、「配置したい要素のどの部分が、アンカー要素のどこと対応するか。」という指定ができます。
 
 例えば、要素をアンカー要素の右上に配置する場合、次のように「下辺をアンカー要素の上辺と同じ位置に」「左辺をアンカー要素の左辺と同じ位置に」という指定をします。
 
-![](/images/css-anchor-positioning/image2-2.png)
+![](/images/css-anchor-positioning-294aa71a7f77fc/image2-2.png)
 
 ```css
 .my-popover {
@@ -205,7 +205,7 @@ Popover API で展開される要素は、ユーザーエージェントスタ�
 
 ### anchor-center 値 ... アンカー要素を基準とした中央寄せ
 
-![](/images/css-anchor-positioning/image2-3.png =480x)
+![](/images/css-anchor-positioning-294aa71a7f77fc/image2-3.png =480x)
 
 `anchor-center` 値は、`justify-self`, `align-self`, `justify-items`, `align-items` プロパティに指定できる値で、要素をアンカー要素の中央を基準に配置します。
 これにより、アンカー要素を基準とした中央寄せが簡単に行えます。
@@ -223,7 +223,7 @@ Popover API で展開される要素は、ユーザーエージェントスタ�
 
 ### position-area ... 配置される領域の指定
 
-![](/images/css-anchor-positioning/image2-4.png =480x)
+![](/images/css-anchor-positioning-294aa71a7f77fc/image2-4.png =480x)
 
 `position-area` プロパティは、要素をアンカー要素の周囲のどの領域に配置するか指定するプロパティです。
 アンカー要素の周囲を「右上」「真上」「左上」...の8つの領域に区切り、要素が占める領域を指定します。1つもしくは隣り合う複数の領域を指定できます。
@@ -236,7 +236,7 @@ top, right 等のプロパティを記述するよりもシンプルに、アン
 - none（初期値） ... このプロパティによる効果はない
 - *`キーワード値`* ... 要素はキーワード値の当てはまる領域に配置される。主な指定のしかたは次を参照。
 
-![アンカー要素に対してどの位置に要素を配置するかによって、それぞれの値が示されている。全部で20通り。左上・上・右上は "top"、左上・上は "top span-left"、上・右上は "top span-right"、上のみは "top center"。右上と右と右下は "right"、右上と右は "right span-top"、右と右下は "right span-bottom"、右のみは "right center"。左下と下と右下は "bottom"、左下と下は "bottom span-left"、下と右下は "bottom span-right"、下のみは "bottom center"。左上と左と左下は "left"、左上と左は "left span-top"、左と左下は "left span-bottom"、左のみは "left center"。左上のみは "top left"、右上のみは "top right"、右下のみは "bottom right"、左下のみは "bottom left"。](/images/css-anchor-positioning/image3-2.png)
+![アンカー要素に対してどの位置に要素を配置するかによって、それぞれの値が示されている。全部で20通り。左上・上・右上は "top"、左上・上は "top span-left"、上・右上は "top span-right"、上のみは "top center"。右上と右と右下は "right"、右上と右は "right span-top"、右と右下は "right span-bottom"、右のみは "right center"。左下と下と右下は "bottom"、左下と下は "bottom span-left"、下と右下は "bottom span-right"、下のみは "bottom center"。左上と左と左下は "left"、左上と左は "left span-top"、左と左下は "left span-bottom"、左のみは "left center"。左上のみは "top left"、右上のみは "top right"、右下のみは "bottom right"、左下のみは "bottom left"。](/images/css-anchor-positioning-294aa71a7f77fc/image3-2.png)
 
 #### position-area についての補足
 
@@ -263,7 +263,7 @@ top, right 等のプロパティを記述するよりもシンプルに、アン
 
 ### position-try-fallbacks プロパティ ... 表示領域に収まらない時の挙動の指定
 
-![](/images/css-anchor-positioning/image3-1.png =480x)
+![](/images/css-anchor-positioning-294aa71a7f77fc/image3-1.png =480x)
 
 `position-try-fallbacks` プロパティは、要素が包含ブロックに収まらない場合、どのように表示位置をフォールバックするか指定します。
 初期表示時だけでなく、スクロールやリサイズ等で収まらなくなった場合も、表示位置がフォールバックされます。
@@ -280,7 +280,7 @@ top, right 等のプロパティを記述するよりもシンプルに、アン
 `none` 以外の値について、カンマ `,` 区切りで複数の値を指定できます。指定した順に、収まる位置が見つかるまでフォールバックが試行されます。（この順序は、後述の `position-try-order` プロパティで制御できます。）
 
 `flip-**` を指定した際の挙動のイメージは、次のとおりです。
-!["flip-inline"、"flip-block"、"flip-start" の3つの場合について、要素の表示位置がどのように変わるか示した図。"flip-inline" の場合、表示位置がインライン方向に反転されている。"flip-block" の場合、表示位置がブロック方向に反転されている。"flip-start" の場合、表示位置がブロック方向とインライン方向の両方に反転されている。](/images/css-anchor-positioning/image3-3.png)
+!["flip-inline"、"flip-block"、"flip-start" の3つの場合について、要素の表示位置がどのように変わるか示した図。"flip-inline" の場合、表示位置がインライン方向に反転されている。"flip-block" の場合、表示位置がブロック方向に反転されている。"flip-start" の場合、表示位置がブロック方向とインライン方向の両方に反転されている。](/images/css-anchor-positioning-294aa71a7f77fc/image3-3.png)
 
 #### position-try-fallbacks の使用例
 
@@ -311,7 +311,7 @@ top, right 等のプロパティを記述するよりもシンプルに、アン
 
 ### position-try-order
 
-![](/images/css-anchor-positioning/image3-4.png =480x)
+![](/images/css-anchor-positioning-294aa71a7f77fc/image3-4.png =480x)
 
 `position-try-order` プロパティは、`position-try-fallbacks` プロパティで指定したフォールバックの試行順序を指定します。
 この要素の包含ブロックのサイズを、 `position-try-fallbacks` プロパティで指定したそれぞれの値について計算し、その大きさによって適用される順序を制御します。
@@ -336,7 +336,7 @@ top, right 等のプロパティを記述するよりもシンプルに、アン
 }
 ```
 
-![position-try-order を指定しない場合と "most-width" を指定した場合の2通りのイメージが示されている。双方、アンカー要素の右上、右下、左上のポップオーバーが配置されており、それぞれA、B、Cのラベルが付けられている。このうちAとBのポップオーバーは、Cに比べて横幅が狭くなっている。前者のイメージでは、Aのポップオーバーが最も前面に表示されており、後者のイメージではCのポップオーバーが最も前面に表示されている。](/images/css-anchor-positioning/image3-5.png)
+![position-try-order を指定しない場合と "most-width" を指定した場合の2通りのイメージが示されている。双方、アンカー要素の右上、右下、左上のポップオーバーが配置されており、それぞれA、B、Cのラベルが付けられている。このうちAとBのポップオーバーは、Cに比べて横幅が狭くなっている。前者のイメージでは、Aのポップオーバーが最も前面に表示されており、後者のイメージではCのポップオーバーが最も前面に表示されている。](/images/css-anchor-positioning-294aa71a7f77fc/image3-5.png)
 
 上記の例では、要素を配置する位置として、
 A. もとの指定（`top span-right`）
@@ -407,7 +407,7 @@ C. `flip-block` した結果（`bottom span-right`）
 
 ### anchor-size() 関数 ... アンカー要素のサイズを取得
 
-![](/images/css-anchor-positioning/image4-1.png =540x)
+![](/images/css-anchor-positioning-294aa71a7f77fc/image4-1.png =540x)
 
 `anchor-size()` 関数は、アンカー要素のサイズを取得する関数です。要素のサイズをアンカー要素のサイズに関連付けて指定する際などに使用します。
 `anchor-size()` 関数は *`<length>`* を返すため、`calc()` 関数や`clamp()` 関数と組み合わせて使用できます。
@@ -458,7 +458,7 @@ C. `flip-block` した結果（`bottom span-right`）
 
 次の図は、 `always`, `anchors-visible`, `no-overflow` の挙動の違いのイメージです。
 
-![](/images/css-anchor-positioning/image4-2.png)
+![](/images/css-anchor-positioning-294aa71a7f77fc/image4-2.png)
 
 #### position-visibility の使用例
 
@@ -486,4 +486,4 @@ HTML（必要に応じて WAI-ARIA）で適切にマークアップし、これ�
 - [CSS Anchor Positioning Editor’s Draft](https://drafts.csswg.org/css-anchor-position-1/)
 - [CSS Anchor Positioning Editor’s Draft（日本語訳）](https://triple-underscore.github.io/css-anchor-position-ja.html)
 - [Chrome for Developers | Blog | CSS アンカー ポジショニング API のご紹介](https://developer.chrome.com/blog/anchor-positioning-api?hl=ja)
-- [ポップアップが画面内に収まらない場合に自動的に表示位置を調整する CSS Anchor Positioning](https://azukiazusa.dev/blog/css-anchor-positioning/)
+- [ポップアップが画面内に収まらない場合に自動的に表示位置を調整する CSS Anchor Positioning](https://azukiazusa.dev/blog/css-anchor-positioning-294aa71a7f77fc/)
