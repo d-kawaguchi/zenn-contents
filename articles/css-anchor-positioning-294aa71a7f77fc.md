@@ -14,7 +14,7 @@ CSS Anchor Positioning は、要素の配置を制御する新しい仕様で、
 
 CSS Anchor Positioning の基本的な使い方は、1枚のシートにまとめました。よろしければ参考にしてください。
 
-![anchor-name プロパティ、position-anchor プロパティ、position-area プロパティ、position-try プロパティについてのそれぞれの説明。記事内でプロパティごと同等の内容が存在するので、そちらを参照ください。](/images/css-anchor-positioning/image0-1.png)
+![anchor-name プロパティ、position-anchor プロパティ、position-area プロパティ、position-try プロパティについてのそれぞれの説明。記事内でプロパティごと同等の内容が存在するので、そちらを参照ください。](/images/css-anchor-positioning-294aa71a7f77fc/image0-1.png)
 
 以下、この記事では CSS Anchor Positioning の仕様内の各プロパティや値などを、より詳しく紹介します。
 
@@ -89,7 +89,7 @@ HTML の `anchor` 属性を使用することでも、アンカー先を指定�
 2024年9月現在、anchor-scope プロパティが動作するブラウザはありません。
 :::
 
-![DOMの木構造を用いて、値が "none" のときはアンカー要素がどこからでも参照できること、"アンカー名" もしくは "all" のときはアンカー要素のサブツリーからしか参照できないことを示した図。](/images/css-anchor-positioning/image1-3.png)
+![DOMの木構造を用いて、値が "none" のときはアンカー要素がどこからでも参照できること、"アンカー名" もしくは "all" のときはアンカー要素のサブツリーからしか参照できないことを示した図。](/images/css-anchor-positioning-294aa71a7f77fc/image1-3.png)
 
 アンカー名の参照されるスコープを指定します。このプロパティで指定されたアンカー名は、サブツリー内からのみ参照されます。
 アンカー要素をコンポーネントを再利用する場合などに、アンカー名の衝突を避けられます。
@@ -113,7 +113,7 @@ HTML の `anchor` 属性を使用することでも、アンカー先を指定�
 }
 ```
 
-![複数のアンカー要素とポップオーバーがあり、anchor-scope を指定しない場合と、 anchor-scope でスコープを制限した場合の2通りの表示のされ方のイメージが示されている。前者は最後のアンカー要素にポップオーバーがすべて集まって重なってしまっており、後者はそれぞれのアンカー要素にそれぞれのポップオーバーが配置されている](/images/css-anchor-positioning/image1-4.png)
+![複数のアンカー要素とポップオーバーがあり、anchor-scope を指定しない場合と、 anchor-scope でスコープを制限した場合の2通りの表示のされ方のイメージが示されている。前者は最後のアンカー要素にポップオーバーがすべて集まって重なってしまっており、後者はそれぞれのアンカー要素にそれぞれのポップオーバーが配置されている](/images/css-anchor-positioning-294aa71a7f77fc/image1-4.png)
 
 アンカー要素のコンポーネントを再利用する際など、同じアンカー名の要素が複数存在することがあります。
 アンカー名のスコープを制限しない場合、そのアンカー名を通じて同名のアンカー要素すべてが参照されます。その結果、最後のアンカー要素を基準に配置されることとなります。
@@ -131,7 +131,7 @@ HTML の `anchor` 属性を使用することでも、アンカー先を指定�
 
 例えば、要素をアンカー要素の右上に配置する場合、次のように「下辺をアンカー要素の上辺と同じ位置に」「左辺をアンカー要素の左辺と同じ位置に」という指定をします。
 
-![](/images/css-anchor-positioning/image2-2.png)
+![](/images/css-anchor-positioning-294aa71a7f77fc/image2-2.png)
 
 ```css
 .my-popover {
@@ -236,7 +236,7 @@ top, right 等のプロパティを記述するよりもシンプルに、アン
 - none（初期値） ... このプロパティによる効果はない
 - *`キーワード値`* ... 要素はキーワード値の当てはまる領域に配置される。主な指定のしかたは次を参照。
 
-![アンカー要素に対してどの位置に要素を配置するかによって、それぞれの値が示されている。全部で20通り。左上・上・右上は "top"、左上・上は "top span-left"、上・右上は "top span-right"、上のみは "top center"。右上と右と右下は "right"、右上と右は "right span-top"、右と右下は "right span-bottom"、右のみは "right center"。左下と下と右下は "bottom"、左下と下は "bottom span-left"、下と右下は "bottom span-right"、下のみは "bottom center"。左上と左と左下は "left"、左上と左は "left span-top"、左と左下は "left span-bottom"、左のみは "left center"。左上のみは "top left"、右上のみは "top right"、右下のみは "bottom right"、左下のみは "bottom left"。](/images/css-anchor-positioning/image3-2.png)
+![アンカー要素に対してどの位置に要素を配置するかによって、それぞれの値が示されている。全部で20通り。左上・上・右上は "top"、左上・上は "top span-left"、上・右上は "top span-right"、上のみは "top center"。右上と右と右下は "right"、右上と右は "right span-top"、右と右下は "right span-bottom"、右のみは "right center"。左下と下と右下は "bottom"、左下と下は "bottom span-left"、下と右下は "bottom span-right"、下のみは "bottom center"。左上と左と左下は "left"、左上と左は "left span-top"、左と左下は "left span-bottom"、左のみは "left center"。左上のみは "top left"、右上のみは "top right"、右下のみは "bottom right"、左下のみは "bottom left"。](/images/css-anchor-positioning-294aa71a7f77fc/image3-2.png)
 
 #### position-area についての補足
 
@@ -280,7 +280,7 @@ top, right 等のプロパティを記述するよりもシンプルに、アン
 `none` 以外の値について、カンマ `,` 区切りで複数の値を指定できます。指定した順に、収まる位置が見つかるまでフォールバックが試行されます。（この順序は、後述の `position-try-order` プロパティで制御できます。）
 
 `flip-**` を指定した際の挙動のイメージは、次のとおりです。
-!["flip-inline"、"flip-block"、"flip-start" の3つの場合について、要素の表示位置がどのように変わるか示した図。"flip-inline" の場合、表示位置がインライン方向に反転されている。"flip-block" の場合、表示位置がブロック方向に反転されている。"flip-start" の場合、表示位置がブロック方向とインライン方向の両方に反転されている。](/images/css-anchor-positioning/image3-3.png)
+!["flip-inline"、"flip-block"、"flip-start" の3つの場合について、要素の表示位置がどのように変わるか示した図。"flip-inline" の場合、表示位置がインライン方向に反転されている。"flip-block" の場合、表示位置がブロック方向に反転されている。"flip-start" の場合、表示位置がブロック方向とインライン方向の両方に反転されている。](/images/css-anchor-positioning-294aa71a7f77fc/image3-3.png)
 
 #### position-try-fallbacks の使用例
 
@@ -336,7 +336,7 @@ top, right 等のプロパティを記述するよりもシンプルに、アン
 }
 ```
 
-![position-try-order を指定しない場合と "most-width" を指定した場合の2通りのイメージが示されている。双方、アンカー要素の右上、右下、左上のポップオーバーが配置されており、それぞれA、B、Cのラベルが付けられている。このうちAとBのポップオーバーは、Cに比べて横幅が狭くなっている。前者のイメージでは、Aのポップオーバーが最も前面に表示されており、後者のイメージではCのポップオーバーが最も前面に表示されている。](/images/css-anchor-positioning/image3-5.png)
+![position-try-order を指定しない場合と "most-width" を指定した場合の2通りのイメージが示されている。双方、アンカー要素の右上、右下、左上のポップオーバーが配置されており、それぞれA、B、Cのラベルが付けられている。このうちAとBのポップオーバーは、Cに比べて横幅が狭くなっている。前者のイメージでは、Aのポップオーバーが最も前面に表示されており、後者のイメージではCのポップオーバーが最も前面に表示されている。](/images/css-anchor-positioning-294aa71a7f77fc/image3-5.png)
 
 上記の例では、要素を配置する位置として、
 A. もとの指定（`top span-right`）
@@ -458,7 +458,7 @@ C. `flip-block` した結果（`bottom span-right`）
 
 次の図は、 `always`, `anchors-visible`, `no-overflow` の挙動の違いのイメージです。
 
-![](/images/css-anchor-positioning/image4-2.png)
+![](/images/css-anchor-positioning-294aa71a7f77fc/image4-2.png)
 
 #### position-visibility の使用例
 
