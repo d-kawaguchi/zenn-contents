@@ -3,7 +3,8 @@ title: "CSS Anchor Positioning 仕様の紹介"
 emoji: "⚓"
 type: "tech" # tech: 技術記事 / idea: アイデア
 topics: [css, html]
-published: false
+published: true
+published_at: 2024-09-26 16:30
 ---
 
 CSS Anchor Positioning は、要素の配置を制御する新しい仕様で、指定した要素（アンカー要素）の位置を基準に、要素を配置できます。
@@ -20,11 +21,11 @@ CSS Anchor Positioning の基本的な使い方は、1枚のシートにまと�
 
 ## アンカー要素の設定
 
-### anchor-name ... アンカー要素の宣言
+### anchor-name プロパティ
 
 ![](/images/css-anchor-positioning-294aa71a7f77fc/image1-1.png =400x)
 
-この要素が、指定したアンカー名のアンカー要素になることを宣言します。これにより、この要素はアンカー名を通じて他の要素から参照されるようになります。
+`anchor-name` プロパティは、この要素が指定したアンカー名のアンカー要素になることを宣言します。これにより、この要素はアンカー名を通じて他の要素から参照されるようになります。
 アンカー名は、`--`から始まる必要があります。
 
 #### anchor-name の値
@@ -41,11 +42,11 @@ CSS Anchor Positioning の基本的な使い方は、1枚のシートにまと�
 ```
 
 
-### position-anchor ... アンカー先の指定
+### position-anchor プロパティ
 
 ![](/images/css-anchor-positioning-294aa71a7f77fc/image1-2.png =400x)
 
-この要素がアンカー先とするアンカー要素を、アンカー名により指定します。これにより、この要素は指定したアンカー要素を基準に配置されることとなります。
+`position-anchor` プロパティは、この要素がアンカー先とするアンカー要素を、アンカー名により指定します。これにより、この要素は指定したアンカー要素を基準に配置されることとなります。
 
 #### position-anchor の値
 
@@ -64,7 +65,7 @@ CSS Anchor Positioning の基本的な使い方は、1枚のシートにまと�
 ```
 
 
-### anchor 属性（HTML） ... 暗黙的なアンカー要素の指定
+### anchor 属性（HTML）
 
 :::message
 2024年9月現在、anchor 属性の仕様は議論中です。
@@ -83,15 +84,13 @@ HTML の `anchor` 属性を使用することでも、アンカー先を指定�
 ```
 
 
-### anchor-scope ... アンカー名のスコープを指定
+### anchor-scope プロパティ
 
 :::message
 2024年9月現在、anchor-scope プロパティが動作するブラウザはありません。
 :::
 
-![DOMの木構造を用いて、値が "none" のときはアンカー要素がどこからでも参照できること、"アンカー名" もしくは "all" のときはアンカー要素のサブツリーからしか参照できないことを示した図。](/images/css-anchor-positioning-294aa71a7f77fc/image1-3.png)
-
-アンカー名の参照されるスコープを指定します。このプロパティで指定されたアンカー名は、サブツリー内からのみ参照されます。
+`anchor-scope` プロパティは、アンカー名の参照されるスコープを指定します。このプロパティで指定されたアンカー名は、サブツリー内からのみ参照されます。
 アンカー要素をコンポーネントを再利用する場合などに、アンカー名の衝突を避けられます。
 
 #### anchor-scope の値
@@ -99,6 +98,8 @@ HTML の `anchor` 属性を使用することでも、アンカー先を指定�
 - `none`（初期値） ... アンカー名はどこからでも参照される
 - *`アンカー名`* ... この要素のサブツリー内で宣言される指定したアンカー名は、この要素のサブツリー内からのみ参照される
 - `all` ... この要素のサブツリー内で宣言されるすべてのアンカー名は、この要素のサブツリー内からのみ参照される
+
+![DOMの木構造を用いて、値が "none" のときはアンカー要素がどこからでも参照できること、"アンカー名" もしくは "all" のときはアンカー要素のサブツリーからしか参照できないことを示した図。](/images/css-anchor-positioning-294aa71a7f77fc/image1-3.png)
 
 #### anchor-scope の使用例
 
@@ -122,7 +123,7 @@ HTML の `anchor` 属性を使用することでも、アンカー先を指定�
 
 ## 配置位置の制御
 
-### anchor() 関数 ... アンカー要素の位置を参照
+### anchor() 関数
 
 ![](/images/css-anchor-positioning-294aa71a7f77fc/image2-1.png =480x)
 
@@ -203,7 +204,7 @@ Popover API で展開される要素は、ユーザーエージェントスタ�
 }
 ```
 
-### anchor-center 値 ... アンカー要素を基準とした中央寄せ
+### anchor-center 値
 
 ![](/images/css-anchor-positioning-294aa71a7f77fc/image2-3.png =480x)
 
@@ -221,7 +222,7 @@ Popover API で展開される要素は、ユーザーエージェントスタ�
 }
 ```
 
-### position-area ... 配置される領域の指定
+### position-area プロパティ
 
 ![](/images/css-anchor-positioning-294aa71a7f77fc/image2-4.png =480x)
 
@@ -261,7 +262,7 @@ top, right 等のプロパティを記述するよりもシンプルに、アン
 
 ## 表示領域に収まらない時の制御
 
-### position-try-fallbacks プロパティ ... 表示領域に収まらない時の挙動の指定
+### position-try-fallbacks プロパティ
 
 ![](/images/css-anchor-positioning-294aa71a7f77fc/image3-1.png =480x)
 
@@ -309,7 +310,7 @@ top, right 等のプロパティを記述するよりもシンプルに、アン
 }
 ```
 
-### position-try-order
+### position-try-order プロパティ
 
 ![](/images/css-anchor-positioning-294aa71a7f77fc/image3-4.png =480x)
 
@@ -346,7 +347,7 @@ C. `flip-block` した結果（`bottom span-right`）
 `position-try-order` プロパティを指定しない場合、記述順に従って、A, B, C の順に試行されます。つまり、もとの指定 A が表示領域に収まればそれが採用され、そうでなければ B, それも収まらなければ C が採用されます。
 `position-try-order: most-width` が指定されている場合では、右側に十分なスペースが無いなどで C の幅が最も大きくなるときは、C, A, B の順に試行されます。結果、C が表示領域に収まればそれが採用されます。
 
-### position-try ... position-try-fallbacks と position-try-order をまとめて指定
+### position-try プロパティ
 
 `position-try` プロパティは、`position-try-fallbacks` プロパティと `position-try-order` プロパティをまとめて指定する短縮プロパティです。
 
@@ -405,7 +406,7 @@ C. `flip-block` した結果（`bottom span-right`）
 
 ## その他
 
-### anchor-size() 関数 ... アンカー要素のサイズを取得
+### anchor-size() 関数
 
 ![](/images/css-anchor-positioning-294aa71a7f77fc/image4-1.png =540x)
 
@@ -445,7 +446,7 @@ C. `flip-block` した結果（`bottom span-right`）
 }
 ```
 
-### position-visibility ... 表示・非表示の制御
+### position-visibility プロパティ
 
 `position-visibility` プロパティは、スクロールなどによりアンカー要素が表示領域に収まらなくなった場合や、自身が表示領域に収まらない場合の、要素の表示・非表示を制御します。
 
