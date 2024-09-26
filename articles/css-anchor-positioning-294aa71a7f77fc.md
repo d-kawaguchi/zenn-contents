@@ -86,10 +86,6 @@ HTML の `anchor` 属性を使用することでも、アンカー先を指定�
 
 ### anchor-scope プロパティ
 
-:::message
-2024年9月現在、anchor-scope プロパティが動作するブラウザはありません。
-:::
-
 `anchor-scope` プロパティは、アンカー名の参照されるスコープを指定します。このプロパティで指定されたアンカー名は、サブツリー内からのみ参照されます。
 アンカー要素をコンポーネントを再利用する場合などに、アンカー名の衝突を避けられます。
 
@@ -395,7 +391,7 @@ C. `flip-block` した結果（`bottom span-right`）
 
 @position-try --popover-top-rule {
   margin-bottom: 10px;
-  position-area: bottom;
+  position-area: top;
 }
 
 @position-try --popover-bottom-rule {
