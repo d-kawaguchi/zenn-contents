@@ -231,9 +231,19 @@ top, right 等のプロパティを記述するよりもシンプルに、アン
 #### position-area の値
 
 - none（初期値） ... このプロパティによる効果はない
-- *`キーワード値`* ... 要素はキーワード値の当てはまる領域に配置される。主な指定のしかたは次を参照。
+- *`キーワード値`* ... 要素はキーワード値の当てはまる領域に配置される。主な値は次の図を参照。
 
 ![アンカー要素に対してどの位置に要素を配置するかによって、それぞれの値が示されている。全部で20通り。左上・上・右上は "top"、左上・上は "top span-left"、上・右上は "top span-right"、上のみは "top center"。右上と右と右下は "right"、右上と右は "right span-top"、右と右下は "right span-bottom"、右のみは "right center"。左下と下と右下は "bottom"、左下と下は "bottom span-left"、下と右下は "bottom span-right"、下のみは "bottom center"。左上と左と左下は "left"、左上と左は "left span-top"、左と左下は "left span-bottom"、左のみは "left center"。左上のみは "top left"、右上のみは "top right"、右下のみは "bottom right"、左下のみは "bottom left"。](/images/css-anchor-positioning-294aa71a7f77fc/image3-2.png)
+
+#### position-area の使用例
+
+```css
+.my-popover {
+  position-anchor: --my-anchor;
+  position: absolute;
+  position-area: top span-right; /* アンカー要素の右上に配置 */
+}
+```
 
 #### position-area についての補足
 
@@ -245,16 +255,6 @@ top, right 等のプロパティを記述するよりもシンプルに、アン
 
 論理的な値について、`x-start`, `span-y-end` といった`x` や `y` が含まれるキーワードは、ブロック方向・インライン方向を指定する代わりに、方向を直接指定するキーワードです。
 `inline-self-start`, `span-block-self-end` といった `self` が含まれるキーワードは、自身の書字モードを参照するキーワードです。
-
-#### position-area の使用例
-
-```css
-.my-popover {
-  position-anchor: --my-anchor;
-  position: absolute;
-  position-area: top span-right; /* アンカー要素の右上に配置 */
-}
-```
 
 ## 表示領域に収まらない時の制御
 
@@ -321,27 +321,28 @@ top, right 等のプロパティを記述するよりもシンプルに、アン
 - `most-block-size` ... 論理的な値。ブロック方向のサイズが大きくなるような順序で試行される。
 - `most-inline-size` ... 論理的な値。インライン方向のサイズが大きくなるような順序で試行される。
 
+比較するサイズが同じものどうしは、元の順序で試行されます。
+
 #### position-try-order の使用例
 
 ```css
 .my-popover {
   position-anchor: --my-anchor;
   position: absolute;
-  position-area: top span-right;
-  position-try-fallbacks: flip-block, flip-inline;
+  position-area: right;
+  position-try-fallbacks: top span-right, bottom span-right, bottom span-left;
   position-try-order: most-width; /* 幅が大きくなるような順序で試行 */
 }
 ```
 
-![position-try-order を指定しない場合と "most-width" を指定した場合の2通りのイメージが示されている。双方、アンカー要素の右上、右下、左上のポップオーバーが配置されており、それぞれA、B、Cのラベルが付けられている。このうちAとBのポップオーバーは、Cに比べて横幅が狭くなっている。前者のイメージでは、Aのポップオーバーが最も前面に表示されており、後者のイメージではCのポップオーバーが最も前面に表示されている。](/images/css-anchor-positioning-294aa71a7f77fc/image3-5.png)
+![position-try-order を指定しない場合と "most-width" を指定した場合の2通りのイメージが示されている。双方、アンカー要素の右下、左上のポップオーバーが配置されており、それぞれA、Bのラベルが付けられている。Aのほうが、Bに比べて横幅が狭くなっている。前者のイメージでは、Aのポップオーバーが前面に表示されており、後者のイメージではBのポップオーバーが最も前面に表示されている。](/images/css-anchor-positioning-294aa71a7f77fc/image3-5.png)
 
-上記の例では、要素を配置する位置として、
-A. もとの指定（`top span-right`）
-B. `flip-inline` した結果（`top span-left`）
-C. `flip-block` した結果（`bottom span-right`）
-のいずれかになることが考えられます。
-`position-try-order` プロパティを指定しない場合、記述順に従って、A, B, C の順に試行されます。つまり、もとの指定 A が表示領域に収まればそれが採用され、そうでなければ B, それも収まらなければ C が採用されます。
-`position-try-order: most-width` が指定されている場合では、右側に十分なスペースが無いなどで C の幅が最も大きくなるときは、C, A, B の順に試行されます。結果、C が表示領域に収まればそれが採用されます。
+上記の例では、要素が元の位置（`position-area: top span-left`）で表示領域に収まらない場合、フォールバック先として
+A. `flip-block`（`bottom span-right` の位置となる）
+B. `flip-start`（`bottom span-left` の位置となる）
+の2つが指定されています。
+`position-try-order` プロパティを指定しない場合、記述順に従って A, B の順に試行されます。つまり、A が表示領域に収まればそれが採用され、そうでなければ B が採用されます。
+`position-try-order: most-width;` が指定されている場合では、右側に十分なスペースが無いなどで B の幅が最も大きくなるとき、B, A の順に試行されます。結果、B が表示領域に収まればそれが採用されます。
 
 ### position-try プロパティ
 
@@ -419,7 +420,7 @@ C. `flip-block` した結果（`bottom span-right`）
 「参照する対象」は、次の値が使用できます。
 - `width`, `height` ... それぞれアンカー要素の幅、高さを参照する
 - `block`, `inline` ... 論理的な値。包含ブロックの書字モードをもとに、ブロック方向、インライン方向のサイズを参照する。
-- `block-start`, `block-end`, `inline-start`, `inline-end` ... 論理的な値。自身の書字モードをもとに、ブロック方向、インライン方向のサイズを参照する。
+- `self-block`, `self-inline` ... 論理的な値。自身の書字モードをもとに、ブロック方向、インライン方向のサイズを参照する。
 
 「参照する対象」も省略可能で、省略した場合はプロパティに対応する軸が指定されたものとして扱われます。例えば `width: anchor-size();` は `width: anchor-size(width);` と同じ意味になります。
 
